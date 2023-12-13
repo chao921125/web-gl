@@ -57,16 +57,13 @@
 
     };
 
-    new MTLLoader()
-      .setPath( './' )
-      .load( 'skitty.mtl', function ( materials ) {
+    new MTLLoader().load( 'https://metagaia-model.s3.ap-east-1.amazonaws.com/prod/model-file/1702343256151GD0ZYH/output.mtl', function ( materials ) {
 
         materials.preload();
 
         new OBJLoader()
           .setMaterials( materials )
-          .setPath( './' )
-          .load( 'skitty.obj', function ( object ) {
+          .load( 'https://metagaia-model.s3.ap-east-1.amazonaws.com/prod/model-file/1702343256151GD0ZYH/output.obj', function ( object ) {
 
             object.position.y = - 0.95;
             object.scale.setScalar( 0.01 );
@@ -85,7 +82,7 @@
 
     //
 
-    const controls = new  OrbitControls( camera, renderer.domElement );
+    const controls = new OrbitControls( camera, renderer.domElement );
     controls.minDistance = 2;
     controls.maxDistance = 5;
 
